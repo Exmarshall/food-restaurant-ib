@@ -11,10 +11,10 @@ import {
 export default function ProfilePage() {
     // Dummy data for now
     const dummyCustomer = {
-        name: "Umar Hayatudeen",
-        email: "umar@example.com",
+        name: "Ibrahim Garba",
+        email: "ibrahim@example.com",
         location: "Kano, Nigeria",
-        phone: "+234 801 234 5678",
+        phone: "+234 7031466516",
         dateJoined: "01 January 2025",
     };
 

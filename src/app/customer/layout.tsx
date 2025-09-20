@@ -9,7 +9,7 @@ export default function customerLayout({
     return (
         <>
             <NavbarCustomer />
-           <div className="min-h-screen bg-gray-500">
+           <div className="min-h-screen bg-gray-500 p-2">
             {children}
             </div> 
             <FooterCustomer />
