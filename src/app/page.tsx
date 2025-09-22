@@ -48,7 +48,7 @@ export default function Home() {
           From Jollof Rice and Suya to contemporary culinary creations, our menu is designed to satisfy every taste. Join thousands of happy customers who trust FOODIE for exceptional meals delivered to their doorsteps.
         </p>
 
-        {/* CTA Buttons: Login & Signup */}
+        {/* Login & Signup Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/auth/login"
@@ -66,7 +66,21 @@ export default function Home() {
             <ArrowRightIcon className="h-5 w-5 ml-2" />
           </Link>
         </div>
+
+        {/* OR Text */}
+        <div className="my-6 text-gray-500 font-medium text-lg">or</div>
       </main>
+
+      {/* Continue as Guest Button at the Bottom */}
+      <div className="flex justify-center pb-8">
+        <Link
+          href="/customer"
+          className="inline-flex items-center justify-center px-6 py-3 bg-orange-500 text-white font-medium rounded-lg shadow-md hover:bg-orange-600 transition"
+        >
+          Continue as Guest
+          <UserIcon className="h-5 w-5 ml-2" />
+        </Link>
+      </div>
 
       {/* Decorative Background Images */}
       <div className="absolute top-0 right-0 w-1/3 opacity-20 -z-10">
