@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState } from "react";
 import FoodCard from "@/components/customer/FoodCard";
@@ -16,15 +16,48 @@ interface Food {
 const dummyFoods: Food[] = [
     {
         id: 1,
-        name: "Shawarma Margherita",
+        name: "Jollof Rice",
+        image: "/images/meat.jpg",
+           
+        category: "Nigerian",
+        price: 8,
+        restaurant: "Mama Africa",
+    },
+    {
+        id: 2,
+        name: "Fried Plantain (Dodo)",
+        image: "/images/dodo2.jpg",
+        category: "Nigerian",
+        price: 5,
+        restaurant: "Mama Africa",
+    },
+    {
+        id: 3,
+        name: "Pounded Yam & Egusi Soup",
+        image: "/images/pando2.jpg",
+        category: "Nigerian",
+        price: 12,
+        restaurant: "Lekki Bites",
+    },
+    {
+        id: 4,
+        name: "Suya (Spicy Meat Skewers)",
+        image: "/images/suya.jpg",
+        category: "Nigerian",
+        price: 10,
+        restaurant: "Suya Spot",
+    },
+    {
+        id: 5,
+        name: "Shawarma Wrap",
         image:
             "https://cdn.pixabay.com/photo/2022/03/11/10/06/wrap-7061741_1280.jpg",
-        category: "Italian",
+        category: "Fast Food",
         price: 12,
         restaurant: "Mario's Kitchen",
     },
     {
-        id: 2,
+        id: 6,
         name: "Chicken Biryani",
         image:
             "https://cdn.pixabay.com/photo/2021/01/06/10/11/shawarma-5893935_640.jpg",
@@ -33,22 +66,22 @@ const dummyFoods: Food[] = [
         restaurant: "Spice Hub",
     },
     {
-        id: 3,
+        id: 7,
+        name: "Beef Burger",
+        image:
+            "https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg",
+        category: "Fast Food",
+        price: 14,
+        restaurant: "Burger House",
+    },
+    {
+        id: 8,
         name: "Sushi Roll",
         image:
             "https://cdn.pixabay.com/photo/2021/01/06/10/11/shawarma-5893935_640.jpg",
         category: "Japanese",
         price: 15,
         restaurant: "Tokyo Dine",
-    },
-    {
-        id: 4,
-        name: "Beef Burger",
-        image:
-            "https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg",
-        category: "American",
-        price: 14,
-        restaurant: "Burger House",
     },
 ];
 
@@ -66,10 +99,10 @@ export default function FoodsPage() {
     );
 
     return (
-        <div className="p-6">
+        <div className="p-6 bg-gradient-to-b from-orange-50 via-white to-yellow-50 min-h-screen">
             {/* Restaurants Filter */}
             <div className="mb-6">
-                <h3 className="flex items-center gap-2 text-lg font-semibold mb-3">
+                <h3 className="flex items-center gap-2 text-lg font-semibold mb-3 text-gray-700">
                     <BuildingStorefrontIcon className="h-5 w-5" />
                     Restaurants
                 </h3>
@@ -77,8 +110,8 @@ export default function FoodsPage() {
                     <button
                         onClick={() => setSelectedRestaurant("")}
                         className={`px-4 py-2 rounded-full border ${selectedRestaurant === ""
-                                ? "bg-blue-500 text-white border-blue-500"
-                                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                            ? "bg-blue-500 text-white border-blue-500"
+                            : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                             }`}
                     >
                         All
@@ -88,8 +121,8 @@ export default function FoodsPage() {
                             key={rest}
                             onClick={() => setSelectedRestaurant(rest)}
                             className={`px-4 py-2 rounded-full border ${selectedRestaurant === rest
-                                    ? "bg-blue-500 text-white border-blue-500"
-                                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                                ? "bg-blue-500 text-white border-blue-500"
+                                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                                 }`}
                         >
                             {rest}
@@ -100,7 +133,7 @@ export default function FoodsPage() {
 
             {/* Categories Filter */}
             <div className="mb-6">
-                <h3 className="flex items-center gap-2 text-lg font-semibold mb-3">
+                <h3 className="flex items-center gap-2 text-lg font-semibold mb-3 text-gray-700">
                     <TagIcon className="h-5 w-5" />
                     Categories
                 </h3>
@@ -108,8 +141,8 @@ export default function FoodsPage() {
                     <button
                         onClick={() => setSelectedCategory("")}
                         className={`px-4 py-2 rounded-full border ${selectedCategory === ""
-                                ? "bg-blue-500 text-white border-blue-500"
-                                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                            ? "bg-blue-500 text-white border-blue-500"
+                            : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                             }`}
                     >
                         All
@@ -119,8 +152,8 @@ export default function FoodsPage() {
                             key={cat}
                             onClick={() => setSelectedCategory(cat)}
                             className={`px-4 py-2 rounded-full border ${selectedCategory === cat
-                                    ? "bg-blue-500 text-white border-blue-500"
-                                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                                ? "bg-blue-500 text-white border-blue-500"
+                                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                                 }`}
                         >
                             {cat}
