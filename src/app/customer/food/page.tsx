@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState } from "react";
 import FoodCard from "@/components/customer/FoodCard";
@@ -18,9 +18,8 @@ const dummyFoods: Food[] = [
         id: 1,
         name: "Jollof Rice",
         image: "/images/meat.jpg",
-           
         category: "Nigerian",
-        price: 8,
+        price: 1500,
         restaurant: "Mama Africa",
     },
     {
@@ -28,7 +27,7 @@ const dummyFoods: Food[] = [
         name: "Fried Plantain (Dodo)",
         image: "/images/dodo2.jpg",
         category: "Nigerian",
-        price: 5,
+        price: 1000,
         restaurant: "Mama Africa",
     },
     {
@@ -36,7 +35,7 @@ const dummyFoods: Food[] = [
         name: "Pounded Yam & Egusi Soup",
         image: "/images/pando2.jpg",
         category: "Nigerian",
-        price: 12,
+        price: 1800,
         restaurant: "Lekki Bites",
     },
     {
@@ -44,44 +43,104 @@ const dummyFoods: Food[] = [
         name: "Suya (Spicy Meat Skewers)",
         image: "/images/suya.jpg",
         category: "Nigerian",
-        price: 10,
+        price: 1000,
         restaurant: "Suya Spot",
     },
     {
         id: 5,
-        name: "Shawarma Wrap",
-        image:
-            "https://cdn.pixabay.com/photo/2022/03/11/10/06/wrap-7061741_1280.jpg",
+        name: "Waina Masa",
+        image: "/images/masa2.jpg",
         category: "Fast Food",
-        price: 12,
+        price: 100,
         restaurant: "Mario's Kitchen",
     },
     {
         id: 6,
-        name: "Chicken Biryani",
-        image:
-            "https://cdn.pixabay.com/photo/2021/01/06/10/11/shawarma-5893935_640.jpg",
+        name: "Gurasa",
+        image: "/images/gurasa1.jpg",
         category: "Indian",
-        price: 10,
+        price: 250,
         restaurant: "Spice Hub",
     },
     {
         id: 7,
-        name: "Beef Burger",
-        image:
-            "https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg",
+        name: "Awara",
+        image: "/images/awara1.jpg",
         category: "Fast Food",
-        price: 14,
-        restaurant: "Burger House",
+        price: 500,
+        restaurant: "Awara House",
     },
     {
         id: 8,
-        name: "Sushi Roll",
-        image:
-            "https://cdn.pixabay.com/photo/2021/01/06/10/11/shawarma-5893935_640.jpg",
+        name: "Bread",
+        image: "/images/bread.jpg",
         category: "Japanese",
-        price: 15,
+        price: 1000,
         restaurant: "Tokyo Dine",
+    },
+    {
+        id: 9,
+        name: "Moi Moi (Bean Cake)",
+        image: "/images/moi.webp",
+        category: "Nigerian",
+        price: 1000,
+        restaurant: "Mama Africa",
+    },
+    {
+        id: 10,
+        name: "Akara (Bean Balls)",
+        image: "/images/akara.jpg",
+        category: "Nigerian",
+        price: 500,
+        restaurant: "Street Bites",
+    },
+    {
+        id: 11,
+        name: "Efo Riro (Vegetable Stew)",
+        image: "/images/vege.jpg",
+        category: "Nigerian",
+        price: 1500,
+        restaurant: "Lekki Bites",
+    },
+    {
+        id: 12,
+        name: "Grilled Chicken",
+        image: "/images/grilled.jpg",
+        category: "Fast Food",
+        price: 2000,
+        restaurant: "Mario's Kitchen",
+    },
+    {
+        id: 13,
+        name: "Puff Puff",
+        image: "/images/puff.webp",
+        category: "Fast Food",
+        price: 500,
+        restaurant: "Pizza Hub",
+    },
+    {
+        id: 14,
+        name: "Spring Rolls",
+        image: "/images/spring.jpg",
+        category: "Chinese",
+        price: 500,
+        restaurant: "Golden Dragon",
+    },
+    {
+        id: 15,
+        name: "Chips & Egg",
+        image: "/images/chips.jpg",
+        category: "Nigerian",
+        price: 1000,
+        restaurant: "Mama Africa",
+    },
+    {
+        id: 16,
+        name: "Spaghetti",
+        image: "/images/spaghetti.jpg",
+        category: "Italian",
+        price: 1000,
+        restaurant: "Roma Dine",
     },
 ];
 

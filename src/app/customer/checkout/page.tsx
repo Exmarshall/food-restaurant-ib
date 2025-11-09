@@ -80,7 +80,8 @@ export default function Checkout() {
                                 <td className="p-3 text-gray-800">${item.price.toFixed(2)}</td>
                                 <td className="p-3 text-center text-gray-800">{item.quantity}</td>
                                 <td className="p-3 text-right text-gray-800">
-                                    ${(item.price * item.quantity).toFixed(2)}
+                                    ₦
+                                    {(item.price * item.quantity).toFixed(2)}
                                 </td>
                             </tr>
                         ))}
@@ -89,7 +90,8 @@ export default function Checkout() {
                                 Grand Total:
                             </td>
                             <td className="p-3 text-right font-semibold text-gray-800">
-                                ${grandTotal.toFixed(2)}
+                                ₦
+                                {grandTotal.toFixed(2)}
                             </td>
                         </tr>
                     </tbody>

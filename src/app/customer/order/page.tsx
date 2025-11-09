@@ -111,7 +111,8 @@ export default function OrderCustomer() {
                                 <tr key={idx} className="hover:bg-gray-50 transition">
                                     <td className="px-4 py-3 text-gray-800">{order.date}</td>
                                     <td className="px-4 py-3 text-gray-800 font-mono">{order.orderId}</td>
-                                    <td className="px-4 py-3 text-gray-800">${order.total.toFixed(2)}</td>
+                                    <td className="px-4 py-3 text-gray-800">₦
+                                        {order.total.toFixed(2)}</td>
                                     <td className="px-4 py-3 text-gray-800">{order.payment}</td>
                                     <td className={`px-4 py-2 ${status.bg} rounded-full inline-block ${status.color} font-semibold`}>
                                         {status.icon} {order.status}

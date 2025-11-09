@@ -15,7 +15,7 @@ export default function Home() {
           <Link href="/">
             <div className="flex items-center gap-2">
               <Image
-                src="/logo.jpg"
+                src="/images/logo.png"
                 alt="FOODIE Logo"
                 width={50}
                 height={50}

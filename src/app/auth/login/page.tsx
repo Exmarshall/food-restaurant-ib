@@ -2,28 +2,47 @@
 
 import { useState } from "react";
 import { Lock, Mail, LogIn, Eye, EyeOff } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { supabase } from "@/lib/supabaseClient";
 
 export default function LoginPage() {
+    const router = useRouter();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
+    const [loading, setLoading] = useState(false);
 
-    const handleLogin = (e: React.FormEvent) => {
+    const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log("Login with:", { email, password });
+        setLoading(true);
+
+        const { data, error } = await supabase.auth.signInWithPassword({
+            email,
+            password,
+        });
+
+        if (error) {
+            toast.error("❌ Invalid email or password");
+        } else {
+            toast.success("✅ Logged in successfully!");
+
+            // Redirect all authenticated users to /food page
+            router.push("/customer/food");
+        }
+
+        setLoading(false);
     };
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
             <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
-                {/* Title */}
                 <h1 className="text-2xl font-bold text-gray-800 text-center mb-6">
                     Login to Your Account
                 </h1>
 
-                {/* Form */}
                 <form onSubmit={handleLogin} className="space-y-5">
-                    {/* Email */}
                     <div>
                         <label className="block text-gray-700 font-medium mb-1">
                             Email Address
@@ -41,7 +60,6 @@ export default function LoginPage() {
                         </div>
                     </div>
 
-                    {/* Password */}
                     <div>
                         <label className="block text-gray-700 font-medium mb-1">
                             Password
@@ -66,23 +84,26 @@ export default function LoginPage() {
                         </div>
                     </div>
 
-                    {/* Button */}
                     <button
                         type="submit"
+                        disabled={loading}
                         className="w-full bg-orange-500 text-white py-2 rounded-lg font-medium hover:bg-orange-600 transition-colors flex items-center justify-center gap-2"
                     >
-                        <LogIn size={20} /> Login
+                        <LogIn size={20} /> {loading ? "Logging in..." : "Login"}
                     </button>
                 </form>
 
-                {/* Extra Links */}
                 <p className="text-sm text-gray-600 mt-4 text-center">
                     Don’t have an account?{" "}
-                    <a href="/auth/register" className="text-orange-500 font-medium hover:underline">
+                    <a
+                        href="/auth/register"
+                        className="text-orange-500 font-medium hover:underline"
+                    >
                         Sign Up
                     </a>
                 </p>
             </div>
+            <ToastContainer autoClose={3000} hideProgressBar />
         </div>
     );
 }

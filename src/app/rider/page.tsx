@@ -1,4 +1,7 @@
 "use client";
+import toast from "react-hot-toast";
+
+toast.success("Welcome back!");
 
 import Image from "next/image";
 import { Bike, Phone, MapPin, Clock, ShieldCheck } from "lucide-react";

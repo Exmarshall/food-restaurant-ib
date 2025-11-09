@@ -150,14 +150,17 @@ export default function OrderDetails() {
                                         <img src={item.image} alt={item.name} className="h-12 w-12 rounded object-cover" />
                                         <span className="text-gray-800 font-medium">{item.name}</span>
                                     </td>
-                                    <td className="px-4 py-3 text-gray-800">${item.price.toFixed(2)}</td>
+                                    <td className="px-4 py-3 text-gray-800">₦
+                                        {item.price.toFixed(2)}</td>
                                     <td className="px-4 py-3 text-center text-gray-800">{item.quantity}</td>
-                                    <td className="px-4 py-3 text-right text-gray-800">${(item.price * item.quantity).toFixed(2)}</td>
+                                    <td className="px-4 py-3 text-right text-gray-800">₦
+                                        {(item.price * item.quantity).toFixed(2)}</td>
                                 </tr>
                             ))}
                             <tr className="bg-gray-200">
                                 <td colSpan={3} className="px-4 py-3 text-right font-semibold text-gray-800">Grand Total:</td>
-                                <td className="px-4 py-3 text-right font-semibold text-gray-800">${grandTotal.toFixed(2)}</td>
+                                <td className="px-4 py-3 text-right font-semibold text-gray-800">₦
+                                    {grandTotal.toFixed(2)}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -170,14 +173,17 @@ export default function OrderDetails() {
                             <img src={item.image} alt={item.name} className="h-16 w-16 rounded object-cover" />
                             <div className="flex-1">
                                 <p className="font-medium text-gray-800">{item.name}</p>
-                                <p className="text-gray-600">Price: ${item.price.toFixed(2)}</p>
+                                <p className="text-gray-600">Price: ₦
+                                    {item.price.toFixed(2)}</p>
                                 <p className="text-gray-600">Quantity: {item.quantity}</p>
-                                <p className="font-semibold text-gray-800">Total: ${(item.price * item.quantity).toFixed(2)}</p>
+                                <p className="font-semibold text-gray-800">Total: ₦
+                                    {(item.price * item.quantity).toFixed(2)}</p>
                             </div>
                         </div>
                     ))}
                     <div className="bg-gray-200 p-4 rounded-lg text-right font-semibold text-gray-800">
-                        Grand Total: ${grandTotal.toFixed(2)}
+                        Grand Total: ₦
+                        {grandTotal.toFixed(2)}
                     </div>
                 </div>
             </div>
